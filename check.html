@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesluko Documentation</title>
+    <style>
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a56d4;
+            --secondary: #ff6b6b;
+            --text: #2b2d42;
+            --light-text: #8d99ae;
+            --background: #f8f9fa;
+            --card-bg: #ffffff;
+            --accent: #06d6a0;
+        }
+        
+        .top-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .nav-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-btn:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .nav-btn-docs {
+            background-color: var(--secondary);
+        }
+        
+        .nav-btn-docs:hover {
+            background-color: #ff5252;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .header-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        .header-content p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        .search-bar {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: slideUp 1s ease-in-out;
+        }
+        
+        .search-bar input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 1rem;
+        }
+        
+        .search-bar button {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0 1.5rem;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .search-bar button:hover {
+            background-color: #ff5252;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-icon {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+        
+        .why-documentation {
+            margin-bottom: 4rem;
+        }
+        
+        .why-documentation h2 {
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .why-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .why-text {
+            flex: 3;
+            min-width: 300px;
+        }
+        
+        .why-text > p {
+            font-size: 1.2rem;
+            color: var(--light-text);
+            margin-bottom: 2rem;
+        }
+        
+        .why-image {
+            flex: 2;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .why-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefits-list {
+            list-style: none;
+        }
+        
+        .benefits-list li {
+            display: flex;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .benefit-icon {
+            font-size: 1.75rem;
+            margin-right: 1rem;
+            background-color: rgba(67, 97, 238, 0.1);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        
+        .benefits-list h4 {
+            margin: 0 0 0.5rem 0;
+            color: var(--primary-dark);
+        }
+        
+        .benefits-list p {
+            margin: 0;
+            color: var(--light-text);
+        }
+        
+        .card:nth-child(1) .card-icon {
+            background-color: var(--primary);
+        }
+        
+        .card:nth-child(2) .card-icon {
+            background-color: var(--secondary);
+        }
+        
+        .card:nth-child(3) .card-icon {
+            background-color: var(--accent);
+        }
+        
+        .card:nth-child(4) .card-icon {
+            background-color: #7209b7;
+        }
+        
+        .card:nth-child(5) .card-icon {
+            background-color: #f72585;
+        }
+        
+        .card:nth-child(6) .card-icon {
+            background-color: #4cc9f0;
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+        
+        .card p {
+            color: var(--light-text);
+            margin-bottom: 1.5rem;
+        }
+        
+        .card a {
+            display: inline-block;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .card a:hover {
+            color: var(--primary-dark);
+        }
+        
+        .quick-links {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .quick-links-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .links-column h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .links-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        .links-column ul {
+            list-style: none;
+        }
+        
+        .links-column li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .links-column a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .links-column a:hover {
+            color: white;
+        }
+        
+        .documentation-features {
+            margin-top: 4rem;
+        }
+        
+        .feature-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+        
+        .feature-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .feature-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .feature-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+        
+        .feature-content p {
+            color: var(--light-text);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .testimonials {
+            background-color: var(--primary);
+            color: white;
+            padding: 4rem 0;
+            margin-top: 3rem;
+        }
+        
+        .testimonial-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 2rem;
+        }
+        
+        .testimonial-container h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -30px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .testimonial-content {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+        }
+        
+        .testimonial-role {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin: 5rem 0;
+            padding: 0 2rem;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            color: var(--light-text);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn-cta {
+            background-color: var(--secondary);
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            margin: 0 0.5rem;
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        footer {
+            background-color: #2b2d42;
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .footer-top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-bottom p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .feature-row {
+                flex-direction: column;
+            }
+            
+            .feature-content, .feature-image {
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="top-navigation">
+                <div class="logo">
+                    <img src="/api/placeholder/180/60" alt="Tesluko Logo">
+                </div>
+                <div class="nav-buttons">
+                    <a href="#" class="nav-btn">Courses</a>
+                    <a href="#" class="nav-btn nav-btn-docs">Documentation</a>
+                </div>
+            </div>
+            <h1>Tesluko Documentation</h1>
+            <p>Your comprehensive guide to mastering our educational platform. Find detailed tutorials, API references, integration guides, and more.</p>
+        </div>
+    </header>
+    
+    <main>
+        <section class="container">
+            <div class="why-documentation">
+                <h2>Why Documentation Matters</h2>
+                <div class="why-content">
+                    <div class="why-text">
+                        <p>At Tesluko, we believe that comprehensive documentation is the foundation of successful learning. Our documentation serves multiple essential purposes:</p>
+                        <ul class="benefits-list">
+                            <li>
+                                <span class="benefit-icon">🎯</span>
+                                <div>
+                                    <h4>Accelerates Learning</h4>
+                                    <p>Well-structured documentation helps students and educators quickly master our platform without frustration.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">🔄</span>
+                                <div>
+                                    <h4>Ensures Consistency</h4>
+                                    <p>Standard procedures and best practices ensure reliable educational experiences across all courses.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">🚀</span>
+                                <div>
+                                    <h4>Empowers Self-Service</h4>
+                                    <p>Comprehensive resources allow educators to solve problems independently and maximize platform potential.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">💡</span>
+                                <div>
+                                    <h4>Promotes Innovation</h4>
+                                    <p>Understanding core functionality inspires educators to create unique, engaging learning experiences.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="why-image">
+                        <img src="/api/placeholder/400/320" alt="Tesluko Learning Experience">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">📚</div>
+                    <div class="card-content">
+                        <h3>Getting Started</h3>
+                        <p>New to Tesluko? Start here with our beginner guides and tutorials to set up your first course.</p>
+                        <a href="#">Explore Getting Started →</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">🧩</div>
+                    <div class="card-content">
+                        <h3>Course Creation</h3>
+                        <p>Learn how to design engaging courses, create interactive content, and manage your curriculum.</p>
+                        <a href="#">Explore Course Creation →</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <div class="card-content">
+                        <h3>Analytics & Reports</h3>
+                        <p>Understand student progress, track engagement metrics, and generate comprehensive reports.</p>
+                        <a href="#">Explore Analytics →</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">🔌</div>
+                    <div class="card-content">
+                        <h3>API Reference</h3>
+                        <p>Integrate EduSphere with your existing tools and systems using our powerful API endpoints.</p>
+                        <a href="#">Explore API Docs →</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">👥</div>
+                    <div class="card-content">
+                        <h3>User Management</h3>
+                        <p>Learn how to manage students, create groups, set permissions, and handle enrollments.</p>
+                        <a href="#">Explore User Management →</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">🛠️</div>
+                    <div class="card-content">
+                        <h3>Troubleshooting</h3>
+                        <p>Find solutions to common issues, debugging tips, and get help with technical challenges.</p>
+                        <a href="#">Explore Troubleshooting →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="quick-links">
+            <div class="quick-links-container">
+                <div class="links-grid">
+                    <div class="links-column">
+                        <h3>Popular Topics</h3>
+                        <ul>
+                            <li><a href="#">Creating Your First Course</a></li>
+                            <li><a href="#">Student Assessment Methods</a></li>
+                            <li><a href="#">Importing External Content</a></li>
+                            <li><a href="#">Interactive Quiz Builder</a></li>
+                            <li><a href="#">Video Lecture Integration</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="links-column">
+                        <h3>For Administrators</h3>
+                        <ul>
+                            <li><a href="#">Institution Management</a></li>
+                            <li><a href="#">Billing & Subscriptions</a></li>
+                            <li><a href="#">User Roles & Permissions</a></li>
+                            <li><a href="#">Security Best Practices</a></li>
+                            <li><a href="#">Compliance & Regulations</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="links-column">
+                        <h3>For Educators</h3>
+                        <ul>
+                            <li><a href="#">Curriculum Design</a></li>
+                            <li><a href="#">Student Engagement Tools</a></li>
+                            <li><a href="#">Grading & Feedback</a></li>
+                            <li><a href="#">Analytics Dashboard</a></li>
+                            <li><a href="#">Collaborative Teaching</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="links-column">
+                        <h3>Technical Resources</h3>
+                        <ul>
+                            <li><a href="#">System Requirements</a></li>
+                            <li><a href="#">Webhooks Configuration</a></li>
+                            <li><a href="#">Single Sign-On (SSO)</a></li>
+                            <li><a href="#">Mobile App Documentation</a></li>
+                            <li><a href="#">Backup & Recovery</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="container documentation-features">
+            <div class="feature-row">
+                <div class="feature-content">
+                    <h2>Interactive Learning Paths</h2>
+                    <p>Create guided learning journeys that adapt to each student's progress and performance. Our smart pathing technology ensures students master prerequisites before advancing to more complex topics.</p>
+                    <p>The documentation provides step-by-step guides for designing effective learning paths, complete with branching scenarios and personalized feedback loops.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                <div class="feature-image">
+                    <img src="/api/placeholder/500/300" alt="Interactive Learning Paths">
+                </div>
+            </div>
+            
+            <div class="feature-row">
+                <div class="feature-image">
+                    <img src="/api/placeholder/500/300" alt="Assessment Builder">
+                </div>
+                <div class="feature-content">
+                    <h2>Comprehensive Assessment Builder</h2>
+                    <p>Design engaging assessments with our powerful builder tool supporting multiple question types, automated grading, and detailed performance analytics.</p>
+                    <p>Learn how to create effective formative and summative assessments, set up rubrics, and implement fair grading strategies that encourage student growth.</p>
+                    <a href="#" class="btn">Explore Assessment Tools</a>
+                </div>
+            </div>
+            
+            <div class="feature-row">
+                <div class="feature-content">
+                    <h2>Data-Driven Insights</h2>
+                    <p>Leverage comprehensive analytics to understand student engagement, identify knowledge gaps, and optimize your teaching strategies in real-time.</p>
+                    <p>Our documentation walks you through setting up custom dashboards, interpreting key metrics, and using predictive analytics to improve learning outcomes.</p>
+                    <a href="#" class="btn">Master Analytics</a>
+                </div>
+                <div class="feature-image">
+                    <img src="/api/placeholder/500/300" alt="Data Analytics Dashboard">
+                </div>
+            </div>
+        </section>
+        
+        <section class="testimonials">
+            <div class="testimonial-container">
+                <h2>What Educators Say</h2>
+                <div class="testimonial-card">
+                    <p class="testimonial-content">The documentation is so well-structured and comprehensive that I was able to set up my entire department's curriculum in just one weekend. The step-by-step guides saved us countless hours of trial and error.</p>
+                    <div class="testimonial-author">Dr. Sarah Johnson</div>
+                    <div class="testimonial-role">Computer Science Department Chair, Stanford University</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="cta-section">
+            <h2>Ready to Transform Your Teaching with Tesluko?</h2>
+            <p>Our comprehensive documentation provides everything you need to create engaging, effective educational experiences that will prepare your students for the tech-driven future.</p>
+            <a href="#" class="btn btn-cta">Get Started Now</a>
+            <a href="#" class="btn btn-cta btn-secondary">Schedule a Demo</a>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="#">Getting Started</a></li>
+                        <li><a href="#">User Guides</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Release Notes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="#">Forums</a></li>
+                        <li><a href="#">Educator Network</a></li>
+                        <li><a href="#">Events & Webinars</a></li>
+                        <li><a href="#">Feature Requests</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                        <li><a href="#">System Status</a></li>
+                        <li><a href="#">Service Level Agreement</a></li>
+                        <li><a href="#">Training Resources</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Tesluko</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tesluko Learning Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

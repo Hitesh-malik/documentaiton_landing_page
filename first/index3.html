@@ -1,0 +1,2000 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation Portal | Telusko</title>
+    <link rel="stylesheet" href="style3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Responsive Hybrid Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <!-- <div class="logo-container">
+                    <span class="logo-text">TELUSKO</span>
+                </div> -->
+                <img src="./images/Telusko (1).png" alt="Telusko Logo">
+            </div>
+
+            <!-- Regular horizontal navbar for desktop -->
+            <div class="nav-links" id="navLinks">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="https://docs.telusko.com" class="btn-primary">Documentation</a></li>
+                </ul>
+            </div>
+
+            <!-- Mobile menu toggle button -->
+            <button class="menu-toggle" id="sideNavToggle" aria-label="Toggle navigation menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 12H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+                    <path d="M3 6H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+                    <path d="M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Side Navigation for mobile (only appears on small screens) -->
+    <div class="side-nav-overlay" id="sideNavOverlay"></div>
+    <div class="side-navigation" id="sideNavigation">
+        <div class="side-nav-header">
+            <button class="side-nav-close" id="sideNavClose" aria-label="Close navigation menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M6 6L18 18" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+        <div class="side-nav-content">
+            <ul class="side-nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="https://docs.telusko.com" class="btn-primary">Documentation</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>Powerful Documentation for Your Journey</h1>
+                <p>Comprehensive guides, tutorials, and references to help you build amazing educational experiences.
+                </p>
+                <div class="hero-cta">
+                    <a href="https://docs.telusko.com" class="btn-primary">Get Started</a>
+                    <a href="#" class="btn-secondary">Explore Guides</a>
+                </div>
+            </div>
+            <div class="hero-image fade-in">
+                <svg width="500" height="400" viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Hero Image SVG -->
+                    <rect x="100" y="50" width="300" height="200" rx="10" fill="#374151" />
+                    <rect x="120" y="80" width="260" height="20" rx="5" fill="#4B5563" />
+                    <rect x="120" y="120" width="200" height="20" rx="5" fill="#4B5563" />
+                    <rect x="120" y="160" width="260" height="20" rx="5" fill="#4B5563" />
+                    <rect x="120" y="200" width="180" height="20" rx="5" fill="#4B5563" />
+                    <circle cx="380" cy="300" r="50" fill="#4F46E5" fill-opacity="0.2" />
+                    <circle cx="120" cy="250" r="30" fill="#4F46E5" fill-opacity="0.3" />
+                    <circle cx="420" cy="100" r="40" fill="#4F46E5" fill-opacity="0.1" />
+                    <path
+                        d="M300 300C300 322.091 282.091 340 260 340C237.909 340 220 322.091 220 300C220 277.909 237.909 260 260 260C282.091 260 300 277.909 300 300Z"
+                        fill="#4F46E5" fill-opacity="0.4" />
+                </svg>
+            </div>
+        </div>
+    </section>
+    <!-- Interactive Documentation Explorer Section -->
+    <section class="documentation-explorer">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Explore Our Documentation</h2>
+                <p>Find the resources you need with our interactive explorer</p>
+            </div>
+            <div class="explorer-container fade-in">
+                <div class="explorer-sidebar">
+                    <div class="explorer-filter">
+                        <input type="text" id="doc-search" placeholder="Search documentation...">
+                    </div>
+                    <div class="explorer-nav">
+                        <ul class="explorer-categories">
+                            <li class="active" data-category="all">All Documentation</li>
+                            <li data-category="beginner">Beginner Tutorials</li>
+                            <li data-category="intermediate">Intermediate Guides</li>
+                            <li data-category="advanced">Advanced Topics</li>
+                            <li data-category="api">API Reference</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="explorer-content">
+                    <div class="explorer-grid">
+                        <!-- Beginner Docs -->
+                        <div class="explorer-card" data-category="beginner">
+                            <div class="explorer-icon">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="40" height="40" rx="8" fill="#EEF2FF" />
+                                    <path d="M20 10V30" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                                    <path d="M10 20H30" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <div class="explorer-details">
+                                <h3>Getting Started Guide</h3>
+                                <p>Learn the basics and set up your first project</p>
+                                <div class="explorer-meta">
+                                    <span class="tag">Beginner</span>
+                                    <span class="time">10 min read</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="explorer-card" data-category="beginner">
+                            <div class="explorer-icon">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="40" height="40" rx="8" fill="#EEF2FF" />
+                                    <path d="M13 20L17 24L27 14" stroke="#4F46E5" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="explorer-details">
+                                <h3>Installation Tutorial</h3>
+                                <p>Step-by-step guide to install our platform</p>
+                                <div class="explorer-meta">
+                                    <span class="tag">Beginner</span>
+                                    <span class="time">5 min read</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Intermediate Docs -->
+                        <div class="explorer-card" data-category="intermediate">
+                            <div class="explorer-icon">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="40" height="40" rx="8" fill="#EEF2FF" />
+                                    <path d="M12 20H28" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                                    <path d="M20 12V28" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <div class="explorer-details">
+                                <h3>Creating Custom Components</h3>
+                                <p>Learn to build reusable components for your projects</p>
+                                <div class="explorer-meta">
+                                    <span class="tag">Intermediate</span>
+                                    <span class="time">15 min read</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="explorer-card" data-category="intermediate">
+                            <div class="explorer-icon">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="40" height="40" rx="8" fill="#EEF2FF" />
+                                    <path d="M26 14L14 26" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                                    <path d="M14 14L26 26" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <div class="explorer-details">
+                                <h3>Error Handling Strategies</h3>
+                                <p>Best practices for handling errors effectively</p>
+                                <div class="explorer-meta">
+                                    <span class="tag">Intermediate</span>
+                                    <span class="time">12 min read</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Advanced Docs -->
+                        <div class="explorer-card" data-category="advanced">
+                            <div class="explorer-icon">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="40" height="40" rx="8" fill="#EEF2FF" />
+                                    <path d="M12 28L28 12" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                                    <path d="M20 12H28V20" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="explorer-details">
+                                <h3>Performance Optimization</h3>
+                                <p>Advanced techniques to optimize your applications</p>
+                                <div class="explorer-meta">
+                                    <span class="tag">Advanced</span>
+                                    <span class="time">20 min read</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="explorer-card" data-category="advanced">
+                            <div class="explorer-icon">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="40" height="40" rx="8" fill="#EEF2FF" />
+                                    <path d="M15 15H25V25H15V15Z" stroke="#4F46E5" stroke-width="2"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M25 20C27.7614 20 30 17.7614 30 15C30 12.2386 27.7614 10 25 10C22.2386 10 20 12.2386 20 15"
+                                        stroke="#4F46E5" stroke-width="2" />
+                                    <path
+                                        d="M15 20C12.2386 20 10 22.2386 10 25C10 27.7614 12.2386 30 15 30C17.7614 30 20 27.7614 20 25"
+                                        stroke="#4F46E5" stroke-width="2" />
+                                </svg>
+                            </div>
+                            <div class="explorer-details">
+                                <h3>Microservices Architecture</h3>
+                                <p>Building scalable applications with microservices</p>
+                                <div class="explorer-meta">
+                                    <span class="tag">Advanced</span>
+                                    <span class="time">25 min read</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- API Docs -->
+                        <div class="explorer-card" data-category="api">
+                            <div class="explorer-icon">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="40" height="40" rx="8" fill="#EEF2FF" />
+                                    <path d="M10 15H30V25H10V15Z" stroke="#4F46E5" stroke-width="2"
+                                        stroke-linejoin="round" />
+                                    <path d="M15 20H25" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <div class="explorer-details">
+                                <h3>REST API Endpoints</h3>
+                                <p>Complete documentation of REST API endpoints</p>
+                                <div class="explorer-meta">
+                                    <span class="tag">API</span>
+                                    <span class="time">Reference</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="explorer-card" data-category="api">
+                            <div class="explorer-icon">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="40" height="40" rx="8" fill="#EEF2FF" />
+                                    <path d="M30 15L20 25L10 15" stroke="#4F46E5" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M10 25L20 15L30 25" stroke="#4F46E5" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="explorer-details">
+                                <h3>GraphQL Schema</h3>
+                                <p>Detailed GraphQL schema documentation</p>
+                                <div class="explorer-meta">
+                                    <span class="tag">API</span>
+                                    <span class="time">Reference</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Tutorials Section -->
+    <section class="tutorials">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Interactive Tutorials</h2>
+                <p>Learn by doing with our step-by-step interactive tutorials</p>
+            </div>
+
+            <div class="tutorials-tabs fade-in">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="basics">Basics</button>
+                    <button class="tab-btn" data-tab="frontend">Frontend</button>
+                    <button class="tab-btn" data-tab="backend">Backend</button>
+                    <button class="tab-btn" data-tab="database">Database</button>
+                </div>
+
+                <div class="tabs-content">
+                    <!-- Basics Tab -->
+                    <div class="tab-pane active" id="basics">
+                        <div class="tutorial-card">
+                            <div class="tutorial-header">
+                                <h3>Creating a React App with Create React App (CRA)</h3>
+                                <div class="tutorial-meta">
+                                    <span class="difficulty">Beginner</span>
+                                    <span class="duration">15 min</span>
+                                </div>
+                            </div>
+
+                            <div class="tutorial-content">
+                                <p>Follow these steps to create your first React app using Create React App (CRA).</p>
+
+                                <div class="tutorial-steps">
+                                    <div class="step">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <h4>Install Node.js & npm</h4>
+                                            <div class="code-sample">
+                                                <pre><code>node -v</code></pre>
+                                                <button class="copy-btn" data-clipboard-text="node -v&#10;npm -v">
+                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                        <path d="M4 4V1H14V11H11" stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path d="M11 4H2V15H11V4Z" stroke="currentColor"
+                                                            stroke-width="2" stroke-linejoin="round" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <p>Download Node.js if not installed: <a href="https://nodejs.org"
+                                                    target="_blank">https://nodejs.org</a></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <h4>Create the React App</h4>
+                                            <div class="code-sample">
+                                                <pre><code>npx create-react-app my-app</code></pre>
+                                                <button class="copy-btn"
+                                                    data-clipboard-text="npx create-react-app my-app">
+                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                        <path d="M4 4V1H14V11H11" stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path d="M11 4H2V15H11V4Z" stroke="currentColor"
+                                                            stroke-width="2" stroke-linejoin="round" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <p>Replace <code>my-app</code> with your project name.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <h4>Navigate to the Project Folder</h4>
+                                            <div class="code-sample">
+                                                <pre><code>cd my-app</code></pre>
+                                                <button class="copy-btn" data-clipboard-text="cd my-app">
+                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                        <path d="M4 4V1H14V11H11" stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path d="M11 4H2V15H11V4Z" stroke="currentColor"
+                                                            stroke-width="2" stroke-linejoin="round" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <div class="step-number">4</div>
+                                        <div class="step-content">
+                                            <h4>Start the Development Server</h4>
+                                            <div class="code-sample">
+                                                <pre><code>npm start</code></pre>
+                                                <button class="copy-btn" data-clipboard-text="npm start">
+                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                        <path d="M4 4V1H14V11H11" stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path d="M11 4H2V15H11V4Z" stroke="currentColor"
+                                                            stroke-width="2" stroke-linejoin="round" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <p>This will start the dev server and open the app in your browser
+                                                (http://localhost:3000).</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <div class="step-number">5</div>
+                                        <div class="step-content">
+                                            <h4>Build for Production (Optional)</h4>
+                                            <div class="code-sample">
+                                                <pre><code>npm run build</code></pre>
+                                                <button class="copy-btn" data-clipboard-text="npm run build">
+                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                        <path d="M4 4V1H14V11H11" stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path d="M11 4H2V15H11V4Z" stroke="currentColor"
+                                                            stroke-width="2" stroke-linejoin="round" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <p>Generates a <code>build/</code> folder with optimized production files.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <div class="step-number">6</div>
+                                        <div class="step-content">
+                                            <h4>Run Tests (Optional)</h4>
+                                            <div class="code-sample">
+                                                <pre><code>npm test</code></pre>
+                                                <button class="copy-btn" data-clipboard-text="npm test">
+                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                        <path d="M4 4V1H14V11H11" stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path d="M11 4H2V15H11V4Z" stroke="currentColor"
+                                                            stroke-width="2" stroke-linejoin="round" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <div class="step-number">7</div>
+                                        <div class="step-content">
+                                            <h4>Install Additional Packages (Optional)</h4>
+                                            <div class="code-sample">
+                                                <pre><code>npm install axios react-router-dom</code></pre>
+                                                <button class="copy-btn"
+                                                    data-clipboard-text="npm install axios react-router-dom">
+                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                        <path d="M4 4V1H14V11H11" stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path d="M11 4H2V15H11V4Z" stroke="currentColor"
+                                                            stroke-width="2" stroke-linejoin="round" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tutorial-footer">
+                                    <a href="#" class="btn-primary">Start Tutorial</a>
+                                    <a href="#" class="btn-link">View All Basic Tutorials</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Frontend Tab -->
+                    <div class="tab-pane" id="frontend">
+                        <div class="tutorial-card">
+                            <div class="tutorial-header">
+                                <h3>Building UI Components</h3>
+                                <div class="tutorial-meta">
+                                    <span class="difficulty">Intermediate</span>
+                                    <span class="duration">15 min</span>
+                                </div>
+                            </div>
+                            <div class="tutorial-content">
+                                <p>Learn how to create reusable UI components for your applications.</p>
+
+                                <div class="tutorial-steps">
+                                    <div class="step">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <h4>Create component file</h4>
+                                            <div class="code-sample">
+                                                <pre><code>// Button.js
+import React from 'react';
+import './Button.css';</code></pre>
+                                                <button class="copy-btn" data-clipboard-text="// Button.js
+import React from 'react';
+import './Button.css';">
+                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                        <path d="M4 4V1H14V11H11" stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path d="M11 4H2V15H11V4Z" stroke="currentColor"
+                                                            stroke-width="2" stroke-linejoin="round" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <h4>Write component code</h4>
+                                            <div class="code-sample">
+                                                <pre><code>const Button = ({ type = 'primary', text, onClick }) => {
+  return (
+    <button className={`btn btn-${type}`} onClick={onClick}>
+      {text}
+    </button>
+  );
+};</code></pre>
+                                                <button class="copy-btn" data-clipboard-text="const Button = ({ type = 'primary', text, onClick }) => {
+  return (
+    <button className={`btn btn-${type}`} onClick={onClick}>
+      {text}
+    </button>
+  );
+};">
+                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                        <path d="M4 4V1H14V11H11" stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path d="M11 4H2V15H11V4Z" stroke="currentColor"
+                                                            stroke-width="2" stroke-linejoin="round" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <h4>Export and use component</h4>
+                                            <div class="code-sample">
+                                                <pre><code>export default Button;
+
+// Usage
+<Button type="secondary" text="Click Me" onClick={handleClick} /></code></pre>
+                                                <button class="copy-btn" data-clipboard-text="export default Button;
+
+// Usage
+<Button type='secondary' text='Click Me' onClick={handleClick} />">
+                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                        <path d="M4 4V1H14V11H11" stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path d="M11 4H2V15H11V4Z" stroke="currentColor"
+                                                            stroke-width="2" stroke-linejoin="round" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tutorial-footer">
+                                    <a href="#" class="btn-primary">Start Tutorial</a>
+                                    <a href="#" class="btn-link">View All Frontend Tutorials</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backend Tab -->
+                    <div class="tab-pane" id="backend">
+                        <div class="tutorial-card">
+                            <div class="tutorial-header">
+                                <h3>Creating RESTful APIs</h3>
+                                <div class="tutorial-meta">
+                                    <span class="difficulty">Intermediate</span>
+                                    <span class="duration">20 min</span>
+                                </div>
+                            </div>
+                            <div class="tutorial-content">
+                                <p>Learn how to build RESTful APIs with Express.js.</p>
+
+                                <div class="tutorial-steps">
+                                    <div class="step">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <h4>Set up Express server</h4>
+                                            <div class="code-sample">
+                                                <pre><code>const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.use(express.json());</code></pre>
+                                                <button class="copy-btn" data-clipboard-text="const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.use(express.json());">
+                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                        <path d="M4 4V1H14V11H11" stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path d="M11 4H2V15H11V4Z" stroke="currentColor"
+                                                            stroke-width="2" stroke-linejoin="round" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <h4>Create API routes</h4>
+                                            <div class="code-sample">
+                                                <pre><code>// Get all users
+app.get('/api/users', (req, res) => {
+  // Logic to fetch users
+  res.json(users);
+});
+
+// Get user by ID
+app.get('/api/users/:id', (req, res) => {
+  const user = users.find(u => u.id === req.params.id);
+  res.json(user);
+});</code></pre>
+                                                <button class="copy-btn" data-clipboard-text="// Get all users
+app.get('/api/users', (req, res) => {
+  // Logic to fetch users
+  res.json(users);
+});
+
+// Get user by ID
+app.get('/api/users/:id', (req, res) => {
+  const user = users.find(u => u.id === req.params.id);
+  res.json(user);
+});">
+                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                        <path d="M4 4V1H14V11H11" stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path d="M11 4H2V15H11V4Z" stroke="currentColor"
+                                                            stroke-width="2" stroke-linejoin="round" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <h4>Start server</h4>
+                                            <div class="code-sample">
+                                                <pre><code>app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});</code></pre>
+                                                <button class="copy-btn" data-clipboard-text="app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});">
+                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                        <path d="M4 4V1H14V11H11" stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path d="M11 4H2V15H11V4Z" stroke="currentColor"
+                                                            stroke-width="2" stroke-linejoin="round" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tutorial-footer">
+                                    <a href="#" class="btn-primary">Start Tutorial</a>
+                                    <a href="#" class="btn-link">View All Backend Tutorials</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Database Tab -->
+                    <div class="tab-pane" id="database">
+                        <div class="tutorial-card">
+                            <div class="tutorial-header">
+                                <h3>Database Integration</h3>
+                                <div class="tutorial-meta">
+                                    <span class="difficulty">Advanced</span>
+                                    <span class="duration">25 min</span>
+                                </div>
+                            </div>
+                            <div class="tutorial-content">
+                                <p>Learn how to integrate MongoDB with your application.</p>
+
+                                <div class="tutorial-steps">
+                                    <div class="step">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <h4>Install dependencies</h4>
+                                            <div class="code-sample">
+                                                <pre><code>npm install mongoose dotenv</code></pre>
+                                                <button class="copy-btn"
+                                                    data-clipboard-text="npm install mongoose dotenv">
+                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                        <path d="M4 4V1H14V11H11" stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path d="M11 4H2V15H11V4Z" stroke="currentColor"
+                                                            stroke-width="2" stroke-linejoin="round" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <h4>Set up connection</h4>
+                                            <div class="code-sample">
+                                                <pre><code>const mongoose = require('mongoose');
+require('dotenv').config();
+
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}).then(() => {
+  console.log('Connected to MongoDB');
+}).catch(err => {
+  console.error('MongoDB connection error:', err);
+});</code></pre>
+                                                <button class="copy-btn" data-clipboard-text="const mongoose = require('mongoose');
+require('dotenv').config();
+
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}).then(() => {
+  console.log('Connected to MongoDB');
+}).catch(err => {
+  console.error('MongoDB connection error:', err);
+});">
+                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                        <path d="M4 4V1H14V11H11" stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path d="M11 4H2V15H11V4Z" stroke="currentColor"
+                                                            stroke-width="2" stroke-linejoin="round" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <h4>Create data model</h4>
+                                            <div class="code-sample">
+                                                <pre><code>const userSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  createdAt: { type: Date, default: Date.now }
+});
+
+const User = mongoose.model('User', userSchema);
+module.exports = User;</code></pre>
+                                                <button class="copy-btn" data-clipboard-text="const userSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  createdAt: { type: Date, default: Date.now }
+});
+
+const User = mongoose.model('User', userSchema);
+module.exports = User;">
+                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                        <path d="M4 4V1H14V11H11" stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path d="M11 4H2V15H11V4Z" stroke="currentColor"
+                                                            stroke-width="2" stroke-linejoin="round" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tutorial-footer">
+                                    <a href="#" class="btn-primary">Start Tutorial</a>
+                                    <a href="#" class="btn-link">View All Database Tutorials</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Key Features</h2>
+                <p>Everything you need to master our platform</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="48" height="48" rx="8" fill="#312E81" />
+                            <path d="M24 14V34" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                            <path d="M14 24H34" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3>Comprehensive Guides</h3>
+                    <p>Step-by-step tutorials covering all aspects of our platform, from basics to advanced features.
+                    </p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="48" height="48" rx="8" fill="#EEF2FF" />
+                            <path d="M16 24L22 30L32 18" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3>Interactive Examples</h3>
+                    <p>Learn by doing with our interactive code examples and demos that illustrate key concepts.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="48" height="48" rx="8" fill="#EEF2FF" />
+                            <path d="M24 16V32" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                            <path d="M18 22L24 16L30 22" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M32 32H16" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3>API Reference</h3>
+                    <p>Detailed documentation of all APIs, functions, and parameters with usage examples.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="48" height="48" rx="8" fill="#EEF2FF" />
+                            <path
+                                d="M32 20C32 16.6863 28.4183 14 24 14C19.5817 14 16 16.6863 16 20C16 23.3137 19.5817 26 24 26"
+                                stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                            <path
+                                d="M24 26C28.4183 26 32 28.6863 32 32C32 35.3137 28.4183 38 24 38C19.5817 38 16 35.3137 16 32"
+                                stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                            <path d="M24 26V32" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3>Community Resources</h3>
+                    <p>Access community-contributed tutorials, tips, and best practices from experienced users.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Overview Section -->
+    <section class="documentation-overview">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Documentation Overview</h2>
+                <p>Browse our comprehensive documentation resources</p>
+            </div>
+            <div class="doc-categories">
+                <div class="doc-category fade-in">
+                    <div class="doc-icon">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="64" height="64" rx="12" fill="#374151" />
+                            <path d="M22 32H42" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                            <path d="M22 24H42" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                            <path d="M22 40H32" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3>Getting Started</h3>
+                    <p>New to our platform? Start here to get up and running quickly.</p>
+                    <a href="https://docs.telusko.com/getting-started" class="btn-link">Learn More →</a>
+                </div>
+                <div class="doc-category fade-in">
+                    <div class="doc-icon">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="64" height="64" rx="12" fill="#F3F4F6" />
+                            <rect x="18" y="18" width="28" height="28" rx="4" stroke="#4F46E5" stroke-width="2" />
+                            <path d="M26 32H38" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                            <path d="M32 26V38" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3>Core Concepts</h3>
+                    <p>Understand the fundamental concepts that power our platform.</p>
+                    <a href="https://docs.telusko.com/core-concepts" class="btn-link">Learn More →</a>
+                </div>
+                <div class="doc-category fade-in">
+                    <div class="doc-icon">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="64" height="64" rx="12" fill="#F3F4F6" />
+                            <path
+                                d="M18 24L18 40C18 41.1046 18.8954 42 20 42L44 42C45.1046 42 46 41.1046 46 40L46 24C46 22.8954 45.1046 22 44 22L20 22C18.8954 22 18 22.8954 18 24Z"
+                                stroke="#4F46E5" stroke-width="2" />
+                            <path d="M26 22V20C26 18.8954 26.8954 18 28 18H36C37.1046 18 38 18.8954 38 20V22"
+                                stroke="#4F46E5" stroke-width="2" />
+                            <path d="M32 28V36" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                            <path d="M28 32H36" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3>Advanced Guides</h3>
+                    <p>Dive deeper into advanced topics and techniques for power users.</p>
+                    <a href="https://docs.telusko.com/advanced-guides" class="btn-link">Learn More →</a>
+                </div>
+                <div class="doc-category fade-in">
+                    <div class="doc-icon">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="64" height="64" rx="12" fill="#F3F4F6" />
+                            <circle cx="32" cy="24" r="6" stroke="#4F46E5" stroke-width="2" />
+                            <path d="M20 42C20 36.4772 25.3726 32 32 32C38.6274 32 44 36.4772 44 42" stroke="#4F46E5"
+                                stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3>API Reference</h3>
+                    <p>Complete reference documentation for our API endpoints and SDKs.</p>
+                    <a href="https://docs.telusko.com/api-reference" class="btn-link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content fade-in">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter to receive the latest updates, tutorials, and resources.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2>Ready to Get Started?</h2>
+                <p>Explore our comprehensive documentation and start building amazing educational experiences today.</p>
+                <a href="https://docs.telusko.com" class="btn-primary">Visit Documentation</a>
+            </div>
+            <div class="cta-image fade-in">
+                <svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- CTA Image SVG -->
+                    <path
+                        d="M50 150C50 95.7715 93.7715 52 148 52H252C306.228 52 350 95.7715 350 150C350 204.228 306.228 248 252 248H148C93.7715 248 50 204.228 50 150Z"
+                        fill="#EEF2FF" />
+                    <rect x="100" y="100" width="200" height="40" rx="8" fill="white" stroke="#4F46E5"
+                        stroke-width="2" />
+                    <rect x="100" y="160" width="200" height="40" rx="8" fill="white" stroke="#4F46E5"
+                        stroke-width="2" />
+                    <circle cx="300" cy="80" r="30" fill="#4F46E5" fill-opacity="0.2" />
+                    <circle cx="100" cy="220" r="20" fill="#4F46E5" fill-opacity="0.3" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Telusko Section -->
+    <section class="about">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>About Telusko</h2>
+                <p>Empowering developers through educational excellence since 2015</p>
+            </div>
+
+            <div class="about-container fade-in">
+                <div class="about-content">
+                    <div class="about-story">
+                        <h3>Our Story</h3>
+                        <p>Founded in 2015, Telusko began with a simple mission: to make complex technology concepts
+                            accessible to everyone. What started as a YouTube channel has grown into a comprehensive
+                            educational platform serving millions of developers worldwide.</p>
+                        <p>Our founder, Navin Reddy, a passionate educator with over 15 years of industry experience,
+                            built Telusko on the belief that quality education should be available to anyone eager to
+                            learn, regardless of their background or location.</p>
+                    </div>
+
+                    <div class="about-mission">
+                        <h3>Our Mission</h3>
+                        <p>At Telusko, we're committed to democratizing technical education. We strive to create
+                            learning experiences that are:</p>
+                        <ul class="mission-points">
+                            <li>
+                                <div class="mission-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+                                            stroke="#4F46E5" stroke-width="2" />
+                                        <path d="M15 9L10.5 14L9 12.5" stroke="#4F46E5" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="mission-text">
+                                    <h4>Accessible</h4>
+                                    <p>Breaking down complex concepts into digestible, easy-to-understand modules</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="mission-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+                                            stroke="#4F46E5" stroke-width="2" />
+                                        <path d="M15 9L10.5 14L9 12.5" stroke="#4F46E5" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="mission-text">
+                                    <h4>Practical</h4>
+                                    <p>Focusing on real-world applications and industry-relevant skills</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="mission-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+                                            stroke="#4F46E5" stroke-width="2" />
+                                        <path d="M15 9L10.5 14L9 12.5" stroke="#4F46E5" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="mission-text">
+                                    <h4>Community-Driven</h4>
+                                    <p>Building a supportive environment where learners help each other grow</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="about-metrics">
+                    <div class="metric-card">
+                        <div class="metric-value">5M+</div>
+                        <div class="metric-label">Learners</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">200+</div>
+                        <div class="metric-label">Courses</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">50+</div>
+                        <div class="metric-label">Technologies</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">100K+</div>
+                        <div class="metric-label">Community Members</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-section fade-in">
+                <h3>Our Leadership Team</h3>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-avatar">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="80" height="80" rx="40" fill="#4F46E5" fill-opacity="0.1" />
+                                <path
+                                    d="M40 40C45.5228 40 50 35.5228 50 30C50 24.4772 45.5228 20 40 20C34.4772 20 30 24.4772 30 30C30 35.5228 34.4772 40 40 40Z"
+                                    fill="#4F46E5" fill-opacity="0.4" />
+                                <path d="M54 60C54 51.7157 47.7307 45 40 45C32.2693 45 26 51.7157 26 60"
+                                    stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <h4>Navin Reddy</h4>
+                        <p class="member-title">Founder & CEO</p>
+                        <p class="member-bio">Tech educator with 15+ years of industry experience. Passionate about
+                            making complex concepts simple.</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-avatar">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="80" height="80" rx="40" fill="#4F46E5" fill-opacity="0.1" />
+                                <path
+                                    d="M40 40C45.5228 40 50 35.5228 50 30C50 24.4772 45.5228 20 40 20C34.4772 20 30 24.4772 30 30C30 35.5228 34.4772 40 40 40Z"
+                                    fill="#4F46E5" fill-opacity="0.4" />
+                                <path d="M54 60C54 51.7157 47.7307 45 40 45C32.2693 45 26 51.7157 26 60"
+                                    stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <h4>Priya Sharma</h4>
+                        <p class="member-title">Chief Technology Officer</p>
+                        <p class="member-bio">Architecture expert with a focus on scalable systems. Former lead engineer
+                            at several tech giants.</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-avatar">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="80" height="80" rx="40" fill="#4F46E5" fill-opacity="0.1" />
+                                <path
+                                    d="M40 40C45.5228 40 50 35.5228 50 30C50 24.4772 45.5228 20 40 20C34.4772 20 30 24.4772 30 30C30 35.5228 34.4772 40 40 40Z"
+                                    fill="#4F46E5" fill-opacity="0.4" />
+                                <path d="M54 60C54 51.7157 47.7307 45 40 45C32.2693 45 26 51.7157 26 60"
+                                    stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <h4>Rahul Patel</h4>
+                        <p class="member-title">Head of Education</p>
+                        <p class="member-bio">Former university professor with a passion for innovative teaching methods
+                            and curriculum design.</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-avatar">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="80" height="80" rx="40" fill="#4F46E5" fill-opacity="0.1" />
+                                <path
+                                    d="M40 40C45.5228 40 50 35.5228 50 30C50 24.4772 45.5228 20 40 20C34.4772 20 30 24.4772 30 30C30 35.5228 34.4772 40 40 40Z"
+                                    fill="#4F46E5" fill-opacity="0.4" />
+                                <path d="M54 60C54 51.7157 47.7307 45 40 45C32.2693 45 26 51.7157 26 60"
+                                    stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <h4>Ananya Gupta</h4>
+                        <p class="member-title">Community Manager</p>
+                        <p class="member-bio">Fostering an inclusive learning environment and building strong
+                            connections within our global community.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our documentation and platform</p>
+            </div>
+
+            <div class="faq-container fade-in">
+                <div class="faq-sidebar">
+                    <div class="faq-categories">
+                        <h3>Categories</h3>
+                        <ul>
+                            <li class="active" data-category="general">General Questions</li>
+                            <li data-category="account">Account & Access</li>
+                            <li data-category="documentation">Documentation</li>
+                            <li data-category="api">API & Integration</li>
+                            <li data-category="troubleshooting">Troubleshooting</li>
+                        </ul>
+                    </div>
+
+                    <div class="faq-search">
+                        <input type="text" placeholder="Search FAQs..." id="faq-search-input">
+                        <button class="search-btn">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M19 19L14.65 14.65" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="faq-content">
+                    <!-- General Questions -->
+                    <div class="faq-group active" id="general">
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <h4>What is Telusko Documentation Portal?</h4>
+                                    <button class="accordion-toggle">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 10H15" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" />
+                                            <path class="vertical-line" d="M10 5V15" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>Telusko Documentation Portal is a comprehensive resource hub that provides
+                                        detailed guides, tutorials, API references, and code examples for all Telusko
+                                        products and technologies. It's designed to help developers and educators at all
+                                        skill levels successfully implement and use our platform.</p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <h4>Is Telusko Documentation free to access?</h4>
+                                    <button class="accordion-toggle">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 10H15" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" />
+                                            <path class="vertical-line" d="M10 5V15" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>Yes, all Telusko documentation is completely free and accessible to everyone. We
+                                        believe in open access to knowledge and education. While some advanced features
+                                        of our platform may require a subscription, the documentation is available to
+                                        all users regardless of subscription status.</p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <h4>How often is the documentation updated?</h4>
+                                    <button class="accordion-toggle">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 10H15" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" />
+                                            <path class="vertical-line" d="M10 5V15" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>Our documentation is continuously updated to reflect the latest features, best
+                                        practices, and community feedback. Major updates are typically released
+                                        alongside product updates, but we make smaller improvements and corrections on a
+                                        daily basis. You can see the last update date at the bottom of each
+                                        documentation page.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Account & Access -->
+                    <div class="faq-group" id="account">
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <h4>Do I need an account to access the documentation?</h4>
+                                    <button class="accordion-toggle">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 10H15" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" />
+                                            <path class="vertical-line" d="M10 5V15" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>No, you don't need an account to access and read our documentation. However,
+                                        creating a free account allows you to bookmark pages, track your progress, and
+                                        contribute to the community discussions.</p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <h4>How do I create an account?</h4>
+                                    <button class="accordion-toggle">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 10H15" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" />
+                                            <path class="vertical-line" d="M10 5V15" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>To create an account, click on the "Sign Up" button in the top-right corner of
+                                        the page. You can register using your email address, Google account, or GitHub
+                                        account. The registration process takes less than a minute, and you'll
+                                        immediately gain access to all account-related features.</p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <h4>Can I download documentation for offline use?</h4>
+                                    <button class="accordion-toggle">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 10H15" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" />
+                                            <path class="vertical-line" d="M10 5V15" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>Yes, registered users can download documentation in PDF format for offline
+                                        reference. Look for the download icon at the top of each documentation page. We
+                                        also offer a complete documentation package that can be downloaded as a single
+                                        ZIP file from your account dashboard.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Documentation -->
+                    <div class="faq-group" id="documentation">
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <h4>Where should I start if I'm new to Telusko?</h4>
+                                    <button class="accordion-toggle">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 10H15" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" />
+                                            <path class="vertical-line" d="M10 5V15" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>We recommend starting with our "Getting Started" guide, which provides an
+                                        overview of the platform and walks you through the basic setup process. After
+                                        that, you can explore the "Core Concepts" section to gain a deeper understanding
+                                        of how everything works together.</p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <h4>Are there interactive examples in the documentation?</h4>
+                                    <button class="accordion-toggle">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 10H15" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" />
+                                            <path class="vertical-line" d="M10 5V15" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>Yes, many of our documentation pages include interactive code examples that you
+                                        can edit and run directly in your browser. This allows you to experiment with
+                                        different approaches and see the results immediately without having to set up a
+                                        local development environment.</p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <h4>How can I contribute to the documentation?</h4>
+                                    <button class="accordion-toggle">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 10H15" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" />
+                                            <path class="vertical-line" d="M10 5V15" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>We welcome contributions from the community! You can suggest edits by clicking
+                                        the "Edit this page" link at the bottom of any documentation page. This will
+                                        take you to our GitHub repository where you can submit a pull request. For more
+                                        substantial contributions, please see our Contribution Guidelines page.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- API & Integration -->
+                    <div class="faq-group" id="api">
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <h4>How do I get an API key?</h4>
+                                    <button class="accordion-toggle">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 10H15" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" />
+                                            <path class="vertical-line" d="M10 5V15" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>You can generate an API key from your account dashboard. Go to "Settings" > "API
+                                        Keys" and click "Generate New Key". Make sure to store your key securely as it
+                                        provides access to your account and resources.</p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <h4>What are the API rate limits?</h4>
+                                    <button class="accordion-toggle">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 10H15" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" />
+                                            <path class="vertical-line" d="M10 5V15" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>Rate limits vary depending on your subscription tier. Free accounts have a limit
+                                        of 1,000 requests per day, while paid plans have higher limits. For detailed
+                                        information, please see our API Rate Limits page in the API Reference section.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <h4>Are there SDKs available for different languages?</h4>
+                                    <button class="accordion-toggle">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 10H15" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" />
+                                            <path class="vertical-line" d="M10 5V15" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>Yes, we provide official SDKs for JavaScript, Python, Java, Ruby, and PHP.
+                                        Community-maintained SDKs are available for other languages like Go, C#, and
+                                        Swift. All SDKs are documented in the "SDK Reference" section of our
+                                        documentation.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Troubleshooting -->
+                    <div class="faq-group" id="troubleshooting">
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <h4>What should I do if I encounter an error?</h4>
+                                    <button class="accordion-toggle">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 10H15" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" />
+                                            <path class="vertical-line" d="M10 5V15" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>First, check the "Common Errors" section of our documentation, which covers
+                                        solutions to frequently encountered issues. If you don't find a solution there,
+                                        you can search our community forums or submit a support ticket through your
+                                        account dashboard.</p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <h4>How can I debug my API requests?</h4>
+                                    <button class="accordion-toggle">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 10H15" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" />
+                                            <path class="vertical-line" d="M10 5V15" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>We provide a request logging feature in your account dashboard that allows you to
+                                        see the last 100 API requests, their status codes, and response bodies.
+                                        Additionally, you can use our "API Playground" to test requests and see detailed
+                                        responses in real-time.</p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <h4>Where can I report documentation errors or unclear sections?</h4>
+                                    <button class="accordion-toggle">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 10H15" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" />
+                                            <path class="vertical-line" d="M10 5V15" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>If you notice an error or find a section of the documentation that's unclear, you
+                                        can click the "Feedback" button at the bottom of any page. This allows you to
+                                        submit detailed feedback directly to our documentation team, who will review and
+                                        address your concerns.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="need-more-help fade-in">
+                <h3>Need More Help?</h3>
+                <p>Can't find what you're looking for? Reach out to our support team or community.</p>
+                <div class="help-options">
+                    <a href="#" class="help-option">
+                        <div class="help-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="40" height="40" rx="20" fill="#EEF2FF" />
+                                <path
+                                    d="M13 20C13 16.134 16.134 13 20 13C23.866 13 27 16.134 27 20C27 23.866 23.866 27 20 27C16.134 27 13 23.866 13 20Z"
+                                    stroke="#4F46E5" stroke-width="2" />
+                                <path d="M20 18V20" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                                <path d="M20 24H20.01" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <h4>Contact Support</h4>
+                        <p>Get help from our dedicated support team</p>
+                    </a>
+                    <a href="#" class="help-option">
+                        <div class="help-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="40" height="40" rx="20" fill="#EEF2FF" />
+                                <path
+                                    d="M27 21C27 24.866 23.866 28 20 28C16.134 28 13 24.866 13 21C13 17.134 16.134 14 20 14C23.866 14 27 17.134 27 21Z"
+                                    stroke="#4F46E5" stroke-width="2" />
+                                <path
+                                    d="M17 21C17 19.3431 18.3431 18 20 18C21.6569 18 23 19.3431 23 21C23 22.6569 21.6569 24 20 24"
+                                    stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                                <path d="M20 27H20.01" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <h4>Community Forums</h4>
+                        <p>Connect with other users and experts</p>
+                    </a>
+                    <a href="#" class="help-option">
+                        <div class="help-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="40" height="40" rx="20" fill="#EEF2FF" />
+                                <path
+                                    d="M17 28H23C25.2091 28 27 26.2091 27 24V16C27 13.7909 25.2091 12 23 12H17C14.7909 12 13 13.7909 13 16V24C13 26.2091 14.7909 28 17 28Z"
+                                    stroke="#4F46E5" stroke-width="2" />
+                                <path d="M17 17H23" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                                <path d="M17 21H23" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                                <path d="M17 25H20" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <h4>Schedule Training</h4>
+                        <p>Get personalized training from our team</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <img src="./images/Telusko (1).png" alt="Logo" width="180" height="40">
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h4>Documentation</h4>
+                        <ul>
+                            <li><a href="#">Getting Started</a></li>
+                            <li><a href="#">Tutorials</a></li>
+                            <li><a href="#">API Reference</a></li>
+                            <li><a href="#">Examples</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Community</a></li>
+                            <li><a href="#">Changelog</a></li>
+                            <li><a href="#">Status</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Legal</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2025 Telusko. All rights reserved.</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-icon">
+                        <!-- YouTube -->
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M19.615 3.184A3.001 3.001 0 0 0 17.723 3H6.277a3 3 0 0 0-1.892.184 3.006 3.006 0 0 0-1.5 1.5A31.053 31.053 0 0 0 2 12a31.053 31.053 0 0 0 .885 7.316 3.006 3.006 0 0 0 1.5 1.5A3.001 3.001 0 0 0 6.277 21h11.446a3.001 3.001 0 0 0 1.892-.184 3.006 3.006 0 0 0 1.5-1.5A31.053 31.053 0 0 0 22 12a31.053 31.053 0 0 0-.885-7.316 3.006 3.006 0 0 0-1.5-1.5zM10 15V9l5 3-5 3z" />
+                        </svg>
+
+                    </a>
+
+                    <a href="#" class="social-icon">
+                        <!-- LinkedIn -->
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v13H0V8zm7.5 0h4.8v1.79h.07c.67-1.26 2.32-2.59 4.77-2.59C20.58 7.2 22 9.2 22 13v8h-5v-7c0-1.7-.03-3.89-2.37-3.89-2.38 0-2.75 1.85-2.75 3.77V21h-5V8z" />
+                        </svg>
+                    </a>
+
+                    <a href="#" class="social-icon">
+                        <!-- Instagram -->
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm4.75-.88a1.12 1.12 0 1 1 0 2.25 1.12 1.12 0 0 1 0-2.25z" />
+                        </svg>
+                    </a>
+
+                    <a href="#" class="social-icon">
+                        <!-- Twitter -->
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 22.4 1.64a9.09 9.09 0 0 1-2.88 1.1A4.52 4.52 0 0 0 16.62 0c-2.5 0-4.5 2.24-4.5 5 0 .39.04.76.12 1.12A12.94 12.94 0 0 1 3 2.1a5.05 5.05 0 0 0-.61 2.52c0 1.73.87 3.26 2.2 4.15a4.52 4.52 0 0 1-2.04-.56v.06c0 2.4 1.69 4.39 3.93 4.85a4.52 4.52 0 0 1-2.03.08c.57 1.8 2.24 3.1 4.22 3.15A9.05 9.05 0 0 1 2 19.54 12.84 12.84 0 0 0 8.29 21c7.55 0 11.68-6.39 11.68-11.93 0-.18-.01-.35-.02-.53A8.18 8.18 0 0 0 23 3z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Intersection Observer for Scroll Animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        const fadeOptions = {
+            threshold: 0.3,
+            rootMargin: "0px 0px -100px 0px"
+        };
+
+        const fadeObserver = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, fadeOptions);
+
+        fadeElements.forEach(element => {
+            fadeObserver.observe(element);
+        });
+
+
+        // JavaScript for Documentation Explorer
+        document.addEventListener('DOMContentLoaded', function () {
+            // Documentation Explorer Category Filtering
+            const explorerCategories = document.querySelectorAll('.explorer-categories li');
+            const explorerCards = document.querySelectorAll('.explorer-card');
+
+            if (explorerCategories.length > 0) {
+                explorerCategories.forEach(category => {
+                    category.addEventListener('click', function () {
+                        // Update active class
+                        explorerCategories.forEach(c => c.classList.remove('active'));
+                        this.classList.add('active');
+
+                        const selectedCategory = this.getAttribute('data-category');
+
+                        // Filter cards
+                        explorerCards.forEach(card => {
+                            if (selectedCategory === 'all') {
+                                card.style.display = 'flex';
+                            } else if (card.getAttribute('data-category') === selectedCategory) {
+                                card.style.display = 'flex';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+            }
+
+            // Documentation Explorer Search
+            const docSearch = document.getElementById('doc-search');
+            if (docSearch) {
+                docSearch.addEventListener('input', function () {
+                    const searchTerm = this.value.toLowerCase();
+
+                    explorerCards.forEach(card => {
+                        const cardTitle = card.querySelector('h3').textContent.toLowerCase();
+                        const cardDesc = card.querySelector('p').textContent.toLowerCase();
+
+                        if (cardTitle.includes(searchTerm) || cardDesc.includes(searchTerm)) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            }
+
+            // Interactive Tutorials Tabs
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+
+            if (tabButtons.length > 0) {
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        // Update active class for buttons
+                        tabButtons.forEach(btn => btn.classList.remove('active'));
+                        this.classList.add('active');
+
+                        // Show the corresponding tab pane
+                        const tabId = this.getAttribute('data-tab');
+                        tabPanes.forEach(pane => {
+                            if (pane.id === tabId) {
+                                pane.classList.add('active');
+                            } else {
+                                pane.classList.remove('active');
+                            }
+                        });
+                    });
+                });
+            }
+
+            // Copy to Clipboard Functionality
+            const copyButtons = document.querySelectorAll('.copy-btn');
+
+            if (copyButtons.length > 0) {
+                copyButtons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        const textToCopy = this.getAttribute('data-clipboard-text');
+                        navigator.clipboard.writeText(textToCopy).then(() => {
+                            // Visual feedback
+                            this.classList.add('copied');
+                            setTimeout(() => {
+                                this.classList.remove('copied');
+                            }, 2000);
+                        });
+                    });
+                });
+            }
+
+            // FAQ Category Filtering
+            const faqCategories = document.querySelectorAll('.faq-categories li');
+            const faqGroups = document.querySelectorAll('.faq-group');
+
+            if (faqCategories.length > 0) {
+                faqCategories.forEach(category => {
+                    category.addEventListener('click', function () {
+                        // Update active class
+                        faqCategories.forEach(c => c.classList.remove('active'));
+                        this.classList.add('active');
+
+                        // Show the corresponding FAQ group
+                        const categoryId = this.getAttribute('data-category');
+                        faqGroups.forEach(group => {
+                            if (group.id === categoryId) {
+                                group.classList.add('active');
+                            } else {
+                                group.classList.remove('active');
+                            }
+                        });
+                    });
+                });
+            }
+
+            // FAQ Accordion
+            const accordionItems = document.querySelectorAll('.accordion-item');
+
+            if (accordionItems.length > 0) {
+                accordionItems.forEach(item => {
+                    const header = item.querySelector('.accordion-header');
+
+                    header.addEventListener('click', function () {
+                        // Toggle active class
+                        const isActive = item.classList.contains('active');
+
+                        // Optional: Close other open accordions
+                        // accordionItems.forEach(i => i.classList.remove('active'));
+
+                        if (isActive) {
+                            item.classList.remove('active');
+                        } else {
+                            item.classList.add('active');
+                        }
+                    });
+                });
+            }
+
+            // FAQ Search
+            const faqSearchInput = document.getElementById('faq-search-input');
+            const allAccordionItems = document.querySelectorAll('.accordion-item');
+
+            if (faqSearchInput) {
+                faqSearchInput.addEventListener('input', function () {
+                    const searchTerm = this.value.toLowerCase();
+
+                    if (searchTerm.length > 2) {
+                        // Show all FAQ groups for searching across all categories
+                        faqGroups.forEach(group => group.classList.add('active'));
+                        faqCategories.forEach(c => c.classList.remove('active'));
+
+                        let matchFound = false;
+
+                        allAccordionItems.forEach(item => {
+                            const questionText = item.querySelector('h4').textContent.toLowerCase();
+                            const answerText = item.querySelector('.accordion-content p').textContent.toLowerCase();
+
+                            if (questionText.includes(searchTerm) || answerText.includes(searchTerm)) {
+                                item.style.display = 'block';
+                                item.classList.add('active'); // Expand matching items
+                                matchFound = true;
+                            } else {
+                                item.style.display = 'none';
+                                item.classList.remove('active');
+                            }
+                        });
+
+                        // If nothing matches, show a message
+                        const noResultsMessage = document.querySelector('.no-results-message');
+                        if (!matchFound) {
+                            if (!noResultsMessage) {
+                                const message = document.createElement('div');
+                                message.className = 'no-results-message';
+                                message.textContent = 'No results found for "' + searchTerm + '". Try another search term.';
+                                document.querySelector('.faq-content').appendChild(message);
+                            }
+                        } else {
+                            if (noResultsMessage) {
+                                noResultsMessage.remove();
+                            }
+                        }
+                    } else if (searchTerm.length === 0) {
+                        // Reset to default state
+                        resetFAQs();
+                    }
+                });
+
+                // Reset FAQ function
+                function resetFAQs() {
+                    // Hide all groups except the first one
+                    faqGroups.forEach((group, index) => {
+                        if (index === 0) {
+                            group.classList.add('active');
+                        } else {
+                            group.classList.remove('active');
+                        }
+                    });
+
+                    // Reset category selection
+                    faqCategories.forEach((category, index) => {
+                        if (index === 0) {
+                            category.classList.add('active');
+                        } else {
+                            category.classList.remove('active');
+                        }
+                    });
+
+                    // Reset accordion items
+                    allAccordionItems.forEach(item => {
+                        item.style.display = 'block';
+                        item.classList.remove('active');
+                    });
+
+                    // Remove any no results message
+                    const noResultsMessage = document.querySelector('.no-results-message');
+                    if (noResultsMessage) {
+                        noResultsMessage.remove();
+                    }
+                }
+            }
+
+            // Intersection Observer for Scroll Animations
+            const fadeElements = document.querySelectorAll('.fade-in');
+
+            const fadeOptions = {
+                threshold: 0.3,
+                rootMargin: "0px 0px -100px 0px"
+            };
+
+            const fadeObserver = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        fadeObserver.unobserve(entry.target);
+                    }
+                });
+            }, fadeOptions);
+
+            fadeElements.forEach(element => {
+                fadeObserver.observe(element);
+            });
+
+            // Mobile Menu Toggle
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                    menuToggle.classList.toggle('active');
+                });
+            }
+        });
+        // JavaScript for Hybrid Navbar
+        document.addEventListener('DOMContentLoaded', function () {
+            const sideNavToggle = document.getElementById('sideNavToggle');
+            const sideNavClose = document.getElementById('sideNavClose');
+            const sideNavigation = document.getElementById('sideNavigation');
+            const sideNavOverlay = document.getElementById('sideNavOverlay');
+
+            // Function to open the side navigation
+            function openSideNav() {
+                sideNavigation.classList.add('active');
+                sideNavOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when nav is open
+            }
+
+            // Function to close the side navigation
+            function closeSideNav() {
+                sideNavigation.classList.remove('active');
+                sideNavOverlay.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+
+            // Mobile toggle button event listener
+            if (sideNavToggle) {
+                sideNavToggle.addEventListener('click', openSideNav);
+            }
+
+            // Close button event listener
+            if (sideNavClose) {
+                sideNavClose.addEventListener('click', closeSideNav);
+            }
+
+            // Overlay click event listener
+            if (sideNavOverlay) {
+                sideNavOverlay.addEventListener('click', closeSideNav);
+            }
+
+            // Close on escape key press
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape' && sideNavigation.classList.contains('active')) {
+                    closeSideNav();
+                }
+            });
+
+            // Handle window resize
+            window.addEventListener('resize', function () {
+                // If screen size increases beyond mobile breakpoint
+                if (window.innerWidth > 768) {
+                    // Close the side nav if it's open
+                    if (sideNavigation.classList.contains('active')) {
+                        closeSideNav();
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
