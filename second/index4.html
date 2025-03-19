@@ -1644,6 +1644,25 @@
             }
         }
 
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 600px;
+            width: 100%;
+            min-height: 300px;
+            border-radius: 0.75rem;
+            overflow: visible;
+            margin: 0 auto;
+        }
+
+        .hero-image svg {
+            width: 100%;
+            height: auto;
+            max-width: 600px;
+            display: block;
+        }
+
         @media (max-width: 576px) {
             .hero-title {
                 font-size: 2rem;
@@ -1747,6 +1766,26 @@
         .hero-image svg.doc-svg {
             animation: float-svg 5s ease-in-out infinite;
         }
+
+        .hero-image svg.doc-svg {
+            width: 100%;
+            height: auto;
+            max-width: 600px;
+            display: block;
+            visibility: visible;
+        }
+
+        .hero-image {
+            max-width: 600px;
+            width: 100%;
+            min-height: 300px;
+            /* Add minimum height */
+            border-radius: 0.75rem;
+            overflow: visible;
+            /* Change from hidden to visible */
+            box-shadow: var(--card-shadow);
+            transition: var(--transition-normal);
+        }
     </style>
 </head>
 
@@ -1838,149 +1877,72 @@
                 </div>
             </div>
             <div class="hero-image fade-in-up float">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" class="doc-svg">
-                    <!-- Background gradient for light/dark mode -->
-                    <defs>
-                        <linearGradient id="bgGradientLight" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#f8f9fa" />
-                            <stop offset="100%" stop-color="#e2e8f0" />
-                        </linearGradient>
-                        <linearGradient id="bgGradientDark" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#1e1e1e" />
-                            <stop offset="100%" stop-color="#2d3748" />
-                        </linearGradient>
-                        <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#29bf12" />
-                            <stop offset="100%" stop-color="#21a80d" />
-                        </linearGradient>
-                    </defs>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="auto">
+                    <!-- Background -->
+                    <rect width="800" height="600" rx="20" fill="#1e1e1e" />
 
-                    <!-- Main background -->
-                    <rect width="800" height="600" rx="20" fill="url(#bgGradientLight)" class="bg-fill" />
+                    <!-- Main documentation window -->
+                    <rect x="100" y="70" width="600" height="460" rx="10" fill="#2a2a2a" stroke="#3a3a3a"
+                        stroke-width="2" />
 
-                    <!-- Main documentation page -->
-                    <g transform="translate(100, 70)">
-                        <rect width="600" height="460" rx="10" fill="#ffffff" class="card-bg"
-                            stroke="rgba(0, 0, 0, 0.1)" stroke-width="2"
-                            filter="drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1))" />
+                    <!-- Window controls -->
+                    <circle cx="130" cy="100" r="8" fill="#ff5f56" />
+                    <circle cx="155" cy="100" r="8" fill="#ffbd2e" />
+                    <circle cx="180" cy="100" r="8" fill="#27c93f" />
 
-                        <!-- Documentation header -->
-                        <rect width="600" height="60" rx="10 10 0 0" fill="#f1f5f9" class="code-bg" />
-                        <circle cx="30" cy="30" r="8" fill="#ff5f56" />
-                        <circle cx="55" cy="30" r="8" fill="#ffbd2e" />
-                        <circle cx="80" cy="30" r="8" fill="#27c93f" />
-                        <rect x="120" y="20" width="360" height="20" rx="3" fill="rgba(0, 0, 0, 0.05)" />
+                    <!-- Sidebar -->
+                    <rect x="100" y="130" width="160" height="400" fill="#222222" />
 
-                        <!-- Sidebar navigation -->
-                        <rect x="0" y="60" width="160" height="400" fill="#f8f9fa" class="code-bg" opacity="0.5" />
+                    <!-- Nav items -->
+                    <rect x="120" y="160" width="120" height="12" rx="2" fill="#666666" />
+                    <rect x="120" y="190" width="100" height="12" rx="2" fill="#555555" />
+                    <rect x="120" y="220" width="110" height="12" rx="2" fill="#555555" />
+                    <rect x="120" y="250" width="90" height="12" rx="2" fill="#555555" />
+                    <rect x="120" y="280" width="120" height="12" rx="2" fill="#29bf12" />
 
-                        <!-- Nav items -->
-                        <rect x="20" y="90" width="120" height="12" rx="2" fill="#4a5568" opacity="0.2" />
-                        <rect x="20" y="120" width="100" height="12" rx="2" fill="#4a5568" opacity="0.15" />
-                        <rect x="20" y="150" width="110" height="12" rx="2" fill="#4a5568" opacity="0.15" />
-                        <rect x="20" y="180" width="90" height="12" rx="2" fill="#4a5568" opacity="0.15" />
-                        <rect x="20" y="210" width="120" height="12" rx="2" fill="#29bf12" opacity="0.8" />
-                        <rect x="20" y="240" width="100" height="12" rx="2" fill="#4a5568" opacity="0.15" />
+                    <!-- Main content area -->
+                    <rect x="280" y="130" width="400" height="400" fill="#2a2a2a" />
 
-                        <!-- Main content -->
-                        <g transform="translate(180, 80)">
-                            <!-- Heading -->
-                            <rect x="0" y="0" width="240" height="24" rx="3" fill="#1a1a1a" opacity="0.9"
-                                class="text-primary" />
+                    <!-- Content elements -->
+                    <rect x="300" y="160" width="240" height="24" rx="3" fill="#eeeeee" />
+                    <rect x="300" y="200" width="360" height="10" rx="2" fill="#999999" />
+                    <rect x="300" y="220" width="340" height="10" rx="2" fill="#999999" />
+                    <rect x="300" y="240" width="380" height="10" rx="2" fill="#999999" />
 
-                            <!-- Paragraph -->
-                            <rect x="0" y="44" width="380" height="10" rx="2" fill="#4a5568" opacity="0.6"
-                                class="text-secondary" />
-                            <rect x="0" y="64" width="360" height="10" rx="2" fill="#4a5568" opacity="0.6"
-                                class="text-secondary" />
-                            <rect x="0" y="84" width="370" height="10" rx="2" fill="#4a5568" opacity="0.6"
-                                class="text-secondary" />
-                            <rect x="0" y="104" width="320" height="10" rx="2" fill="#4a5568" opacity="0.6"
-                                class="text-secondary" />
+                    <!-- Code block -->
+                    <rect x="300" y="280" width="360" height="120" rx="5" fill="#333333" />
+                    <rect x="320" y="300" width="80" height="12" rx="2" fill="#29bf12" />
+                    <rect x="410" y="300" width="120" height="12" rx="2" fill="#999999" />
+                    <rect x="320" y="330" width="200" height="12" rx="2" fill="#29bf12" />
+                    <rect x="320" y="360" width="240" height="12" rx="2" fill="#999999" />
 
-                            <!-- Subheading -->
-                            <rect x="0" y="144" width="180" height="20" rx="3" fill="#1a1a1a" opacity="0.8"
-                                class="text-primary" />
+                    <!-- List items -->
+                    <circle cx="310" cy="430" r="4" fill="#29bf12" />
+                    <rect x="325" y="425" width="280" height="10" rx="2" fill="#999999" />
+                    <circle cx="310" cy="460" r="4" fill="#29bf12" />
+                    <rect x="325" y="455" width="300" height="10" rx="2" fill="#999999" />
 
-                            <!-- Code block -->
-                            <rect x="0" y="184" width="380" height="100" rx="5" fill="#f1f5f9" class="code-bg" />
-                            <rect x="20" y="204" width="80" height="12" rx="2" fill="#2563eb" opacity="0.8" />
-                            <rect x="110" y="204" width="120" height="12" rx="2" fill="#4a5568" opacity="0.7" />
-                            <rect x="40" y="224" width="200" height="12" rx="2" fill="#16a34a" opacity="0.8" />
-                            <rect x="40" y="244" width="180" height="12" rx="2" fill="#4a5568" opacity="0.7" />
-                            <rect x="40" y="264" width="150" height="12" rx="2" fill="#4a5568" opacity="0.7" />
-                            <rect x="20" y="264" width="10" height="12" rx="2" fill="#4a5568" opacity="0.7" />
-
-                            <!-- List items with bullets -->
-                            <circle cx="10" cy="324" r="4" fill="#29bf12" />
-                            <rect x="25" y="318" width="280" height="12" rx="2" fill="#4a5568" opacity="0.6" />
-
-                            <circle cx="10" cy="354" r="4" fill="#29bf12" />
-                            <rect x="25" y="348" width="300" height="12" rx="2" fill="#4a5568" opacity="0.6" />
-                        </g>
-                    </g>
-
-                    <!-- Floating elements to add depth -->
-                    <!-- Documentation page with accent highlight -->
-                    <g transform="translate(50, 130) rotate(-8)">
-                        <rect width="180" height="220" rx="8" fill="#ffffff" class="card-bg" stroke="rgba(0, 0, 0, 0.1)"
-                            stroke-width="2" filter="drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1))" />
+                    <!-- Floating elements -->
+                    <g transform="translate(50, 150) rotate(-8)">
+                        <rect width="180" height="220" rx="8" fill="#2a2a2a" stroke="#3a3a3a" stroke-width="2" />
                         <rect x="0" y="0" width="180" height="6" rx="8 8 0 0" fill="#29bf12" />
-                        <rect x="20" y="26" width="140" height="16" rx="2" fill="#1a1a1a" opacity="0.7"
-                            class="text-primary" />
-                        <rect x="20" y="58" width="140" height="8" rx="2" fill="#4a5568" opacity="0.5"
-                            class="text-secondary" />
-                        <rect x="20" y="76" width="140" height="8" rx="2" fill="#4a5568" opacity="0.5"
-                            class="text-secondary" />
-                        <rect x="20" y="94" width="90" height="8" rx="2" fill="#4a5568" opacity="0.5"
-                            class="text-secondary" />
-                        <rect x="20" y="130" width="60" height="12" rx="2" fill="#1a1a1a" opacity="0.7"
-                            class="text-primary" />
-                        <rect x="20" y="154" width="140" height="8" rx="2" fill="#4a5568" opacity="0.5"
-                            class="text-secondary" />
-                        <rect x="20" y="172" width="140" height="8" rx="2" fill="#4a5568" opacity="0.5"
-                            class="text-secondary" />
-                        <rect x="20" y="190" width="100" height="8" rx="2" fill="#4a5568" opacity="0.5"
-                            class="text-secondary" />
+                        <rect x="20" y="26" width="140" height="16" rx="2" fill="#eeeeee" />
+                        <rect x="20" y="58" width="140" height="8" rx="2" fill="#999999" />
+                        <rect x="20" y="76" width="140" height="8" rx="2" fill="#999999" />
                     </g>
 
-                    <!-- Code snippet floating card -->
-                    <g transform="translate(580, 160) rotate(8)">
-                        <rect width="200" height="180" rx="8" fill="#ffffff" class="card-bg" stroke="rgba(0, 0, 0, 0.1)"
-                            stroke-width="2" filter="drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1))" />
+                    <g transform="translate(580, 180) rotate(8)">
+                        <rect width="200" height="180" rx="8" fill="#2a2a2a" stroke="#3a3a3a" stroke-width="2" />
                         <rect x="0" y="0" width="200" height="6" rx="8 8 0 0" fill="#29bf12" />
-                        <rect x="15" y="22" width="170" height="140" rx="5" fill="#f1f5f9" class="code-bg" />
-                        <rect x="30" y="42" width="70" height="10" rx="2" fill="#2563eb" opacity="0.8" />
-                        <rect x="30" y="62" width="140" height="10" rx="2" fill="#4a5568" opacity="0.7" />
-                        <rect x="45" y="82" width="120" height="10" rx="2" fill="#16a34a" opacity="0.8" />
-                        <rect x="45" y="102" width="100" height="10" rx="2" fill="#4a5568" opacity="0.7" />
-                        <rect x="30" y="122" width="130" height="10" rx="2" fill="#2563eb" opacity="0.8" />
+                        <rect x="15" y="22" width="170" height="140" rx="5" fill="#333333" />
+                        <rect x="30" y="42" width="70" height="10" rx="2" fill="#29bf12" />
+                        <rect x="30" y="62" width="140" height="10" rx="2" fill="#999999" />
                     </g>
 
-                    <!-- Accent graphical elements -->
+                    <!-- Accent elements -->
                     <circle cx="50" cy="50" r="20" fill="#29bf12" opacity="0.2" />
                     <circle cx="750" cy="100" r="30" fill="#29bf12" opacity="0.1" />
                     <circle cx="700" cy="500" r="50" fill="#29bf12" opacity="0.1" />
-                    <circle cx="100" cy="450" r="40" fill="#29bf12" opacity="0.1" />
-
-                    <!-- Small accent dots pattern -->
-                    <g opacity="0.3">
-                        <circle cx="150" cy="100" r="3" fill="#29bf12" />
-                        <circle cx="180" cy="120" r="2" fill="#29bf12" />
-                        <circle cx="130" cy="140" r="2" fill="#29bf12" />
-
-                        <circle cx="650" cy="320" r="3" fill="#29bf12" />
-                        <circle cx="680" cy="340" r="2" fill="#29bf12" />
-                        <circle cx="630" cy="360" r="2" fill="#29bf12" />
-
-                        <circle cx="400" cy="50" r="3" fill="#29bf12" />
-                        <circle cx="430" cy="30" r="2" fill="#29bf12" />
-                        <circle cx="450" cy="60" r="2" fill="#29bf12" />
-
-                        <circle cx="200" cy="520" r="3" fill="#29bf12" />
-                        <circle cx="230" cy="550" r="2" fill="#29bf12" />
-                        <circle cx="180" cy="540" r="2" fill="#29bf12" />
-                    </g>
                 </svg>
             </div>
         </div>
@@ -2811,6 +2773,19 @@ public class HelloController {
             });
         });
 
+
+        // Add to your existing JavaScript
+        document.addEventListener('DOMContentLoaded', () => {
+            const svgElement = document.querySelector('.doc-svg');
+            console.log('SVG Element:', svgElement);
+            if (svgElement) {
+                // Force redraw
+                svgElement.style.display = 'none';
+                setTimeout(() => {
+                    svgElement.style.display = 'block';
+                }, 100);
+            }
+        });
         function animateNumber(element, targetValue) {
             const duration = 2000; // 2 seconds
             const frameDuration = 1000 / 60; // 60 fps
@@ -2907,6 +2882,16 @@ public class HelloController {
                 setTimeout(() => {
                     docSvg.style.opacity = '1';
                 }, 50);
+            }
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            // Force SVG redraw after load
+            const svg = document.querySelector('.hero-image svg');
+            if (svg) {
+                // Create a new identical SVG element
+                const newSvg = svg.cloneNode(true);
+                // Replace the old one with the new one
+                svg.parentNode.replaceChild(newSvg, svg);
             }
         });
     </script>
